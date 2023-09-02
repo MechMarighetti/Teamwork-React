@@ -8,27 +8,52 @@ const grupo = {
     {
         nombre: 'Amnel Villaroel',
         edad: 38
+    }, 
+    {
+        nombre: 'Amigo Imaginario que Rompe mi código',
+        edad: 52
+    }, 
+    {
+        nombre: 'Carlita la Piola que mejora el código',
+        edad: 19
     }],
 }
 
 
 const Presentacion = () => {
 
-    const [nombre, setNombre] = useState()
-    const [edad, setEdad] = useState()
-    const otro = () => {
-        setNombre(grupo.integrantes[1].nombre)
-        setEdad(grupo.integrantes[1].edad)
-    }
+    const [otro, setOtro] = useState(0)
+    const increment = () => {
+        otro < (grupo.integrantes.length - 1) ? setOtro(otro + 1) : setOtro(0);
+      };
+    /* const increment = () => {
+         if (otro < (grupo.integrantes.length - 1)) {
+              setOtro(otro + 1);
+            } else {
+                setOtro(0)
+            }
+        } */
+        const decrement = () => {
+            otro === 0 ? setOtro(grupo.integrantes.length - 1) : setOtro(otro - 1);
+          };
+
+        /* const decrement = () => {
+            if (otro == 0) {
+                 setOtro(grupo.integrantes.length - 1);
+               } else {
+                   setOtro(otro - 1)
+               }
+           } */
+        
 
     return (
         <>
-            <button onClick={otro}>←</button>
+            <button onClick={decrement}>←</button>
             <h1>{grupo.titulo}</h1>
-            <h2>{grupo.integrantes[0].nombre}</h2>
-            <em>{grupo.integrantes[0].edad} años</em>
+            <h2>{grupo.integrantes[otro].nombre}</h2>
+            <p>{grupo.integrantes[otro].edad} años</p>
             <br />
-            <button onClick={otro}>→</button>
+            <button onClick={increment}>→</button>
         </>
     )
 }
