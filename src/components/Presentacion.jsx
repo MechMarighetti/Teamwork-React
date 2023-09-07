@@ -3,19 +3,23 @@ const grupo = {
     titulo: 'Los Tatata',
     integrantes: [{
         nombre: 'Mercedes Marighetti',
-        edad: 32
+        edad: 32,
+        email:'mercedesmarighetti@gmail.com'
     },
     {
         nombre: 'Amnel Villaroel',
-        edad: 38
+        edad: 38,
+        email:'amvillaroel@gmail.com'
     }, 
     {
-        nombre: 'Amigo Imaginario que Rompe mi código',
-        edad: 52
+        nombre: 'Asbel Gonzalez',
+        edad: 28,
+        email:'asbel.gonzalez95@gmail.com'
     }, 
     {
-        nombre: 'Carlita la Piola que mejora el código',
-        edad: 19
+        nombre: 'Alan Medina',
+        edad: 30,
+        email:'alan_2095@hotmail.com'
     }],
 }
 
@@ -47,13 +51,15 @@ const Presentacion = () => {
         
 
     return (
-        <>
+        <><div className='center'>
             <button onClick={decrement}>←</button>
             <h1>{grupo.titulo}</h1>
             <h2>{grupo.integrantes[otro].nombre}</h2>
             <p>{grupo.integrantes[otro].edad} años</p>
+            <p>Contacto: {grupo.integrantes[otro].email}</p>
             <br />
             <button onClick={increment}>→</button>
+        </div>
         </>
     )
 }

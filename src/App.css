@@ -27,16 +27,26 @@
   }
 }
 
+@keyframes changeColor {
+  from {
+    color: rgb(0, 225, 255);
+  }
+  to {
+     color: rgb(156, 223, 125);
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
-.card {
-  padding: 2em;
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  /* animation: changeColor ease-in-out 5s infinite; */
 }
 
-.read-the-docs {
-  color: #888;
-}
